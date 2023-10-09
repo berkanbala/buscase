@@ -1,14 +1,21 @@
 "use client";
 import React from "react";
 import styles from "./home.module.scss";
-import AllModals from "@/custom/modals/allModals/allModals";
+import { useAppContext } from "@/common/context/appContext";
+
 export default function Home() {
+  const { modals } = useAppContext();
+
+  const handleSignin = () => modals.setSigninModalVisible(true);
+  const handleSignup = () => modals.setSignupModalVisible(true);
+
   return (
     <div className={styles.container}>
-      {/* <AllModals /> */}
-      <div className={styles.content}>
-        <div>giriş</div>
-        <div>kayıt</div>
+      <div className={styles.signin} onClick={handleSignin}>
+        giriş
+      </div>
+      <div className={styles.signup} onClick={handleSignup}>
+        kayıt
       </div>
     </div>
   );

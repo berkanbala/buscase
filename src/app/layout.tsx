@@ -2,6 +2,8 @@ import { AppContext } from "@/common/context/appContext";
 import "../styles/globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import AllModals from "@/custom/modals/allModals/allModals";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <AppContext> */}
-        {children}
-        {/* </AppContext> */}
+        <AppContext>
+          <AllModals />
+          {children}
+          <ToastContainer />
+        </AppContext>
       </body>
     </html>
   );
