@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import styles from "./dashboard.module.scss";
+import styles from "./home.module.scss";
 import AllModals from "@/custom/modals/allModals/allModals";
-export default function Dashboard() {
+export default function Home() {
   return (
     <div className={styles.container}>
       {/* <AllModals /> */}

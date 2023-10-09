@@ -1,7 +1,13 @@
 import { useState } from "react";
 
 export const useModals = () => {
-  const [loginModalVisible, setLoginModalVisible] = useState(false);
+  const [signinModalVisible, setSigninModalVisible] = useState(false);
+  const [signupModalVisible, setSignupModalVisible] = useState(false);
 
-  return { loginModalVisible, setLoginModalVisible };
+  return {
+    signinModalVisible,
+    setSigninModalVisible,
+    signupModalVisible,
+    setSignupModalVisible,
+  };
 };

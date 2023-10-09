@@ -1,5 +1,5 @@
-import Dashboard from "../custom/pages/dashboard/dashboard";
+import Home from "../custom/pages/home/home";
 
-export default function Home() {
-  return <Dashboard />;
+export default function Index() {
+  return <Home />;
 }
