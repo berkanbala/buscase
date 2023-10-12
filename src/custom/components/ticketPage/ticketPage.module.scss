@@ -1,2 +1,30 @@
-.container {
+.seatContainer {
+  .seatContent {
+    display: flex;
+    width: 100px;
+    flex-wrap: wrap;
+    .seat {
+      visibility: hidden;
+      label {
+        background-color: lightcyan;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+      }
+      &:checked + label {
+        background-color: green;
+      }
+      &:disabled + label {
+        background-color: lightsalmon;
+        cursor: not-allowed;
+      }
+    }
+  }
+  .proceed {
+    text-align: center;
+    margin: 20px auto;
+    width: 100px;
+  }
 }

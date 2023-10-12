@@ -9,12 +9,17 @@ export const AppContext = (props: Props) => {
   const { children } = props;
 
   // const [user, setUser] = useState({} as any);
-  const [user, setUser] = useState([] as any);
+  // const [user, setUser] = useState([] as any);
+  const [user, setUser] = useState("");
   // const [pass, setPass] = useState({} as any);
-  const [pass, setPass] = useState([] as any);
+  // const [pass, setPass] = useState([] as any);
+  const [pass, setPass] = useState("");
   const [auth, setAuth] = useState(false);
+  // const { loginModalVisible, setLoginModalVisible } = useModals(false);
 
   const {
+    loginModalVisible,
+    setLoginModalVisible,
     signinModalVisible,
     setSigninModalVisible,
     signupModalVisible,
@@ -24,6 +29,8 @@ export const AppContext = (props: Props) => {
   return (
     <MainContext.Provider
       value={{
+        loginModalVisible,
+        setLoginModalVisible,
         pass,
         setPass,
         auth,
@@ -46,6 +53,8 @@ export const AppContext = (props: Props) => {
 };
 
 interface IAppContext {
+  loginModalVisible: any;
+  setLoginModalVisible: any;
   pass: any;
   setPass: any;
   auth: any;

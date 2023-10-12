@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SigninModal.module.scss";
 import { useAppContext } from "@/common/context/appContext";
 import Image from "next/image";
@@ -13,19 +13,28 @@ export default function SigninModal() {
     fname: "",
     password: "",
   };
-  const { modals } = useAppContext();
+  const { modals, setAuth, setPass, setUser } = useAppContext();
+
+  const [firstNameValue, setFirstNameValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("");
 
   const handleCloseModal = () => modals.setSigninModalVisible(false);
   const handlePropagation = (e: any) => e.stopPropagation();
 
   const [form, setForm] = useFormSigninHook(initialValues);
 
-  // const handleSubmit = (e: any) => {
-  //   e.preventDefault();
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
 
-  //   console.log(form);
-  //   setForm(initialValues);
-  // };
+    console.log(form);
+    setForm(initialValues);
+    setFirstNameValue("");
+    setPasswordValue("");
+    setUser(firstNameValue);
+    setPass(passwordValue);
+    setAuth(true);
+    modals.setSigninModalVisible(false);
+  };
 
   if (!modals.signinModalVisible) return null;
 
@@ -34,10 +43,7 @@ export default function SigninModal() {
     <div className={styles.container} onClick={handleCloseModal}>
       <div className={styles.modal} onClick={handlePropagation}>
         <div className={styles.modalTitle}>GİRİŞ</div>
-        <form
-          className={styles.modalForm}
-          // onSubmit={handleSubmit}
-        >
+        <form className={styles.modalForm} onSubmit={handleSubmit}>
           {/* <input type="text" name="name" placeholder="ad-soyad" required /> */}
           <Input
             type="text"
@@ -69,6 +75,9 @@ export default function SigninModal() {
             type="submit"
             text={"giriş yap"}
             disabled={Object.values(form).some((formValue) => formValue === "")}
+            // disabled={Object.values({ firstNameValue, passwordValue }).some(
+            //   (loginValue) => loginValue === ""
+            // )}
           />
         </form>
         <span onClick={handleCloseModal} className={styles.close}>

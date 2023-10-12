@@ -1,2 +1,35 @@
-.container {
+.searchContainer {
+  border: solid;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+  flex-direction: column;
+  margin: auto;
+
+  input {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .formGroup {
+    width: 150px;
+  }
+
+  .button {
+    margin-top: 20px;
+    border: none;
+    width: 120px;
+    padding: 10px;
+    background-color: green;
+    color: whitesmoke;
+
+    &:hover {
+      background-color: burlywood;
+      color: black;
+      cursor: pointer;
+    }
+  }
 }
