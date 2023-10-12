@@ -34,7 +34,6 @@
       flex-direction: column;
       gap: 20px;
 
-      input,
       select {
         display: flex;
         flex-direction: column;
@@ -49,6 +48,7 @@
         transition: 0.5s;
         font-size: 15px;
       }
+
       .button {
         width: 200px;
         font-size: 16px;

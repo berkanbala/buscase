@@ -10,7 +10,6 @@ export default function Home() {
   const handleSignin = () => modals.setSigninModalVisible(true);
   const handleSignup = () => modals.setSignupModalVisible(true);
 
-  // console.log("111");
   return (
     <div className={styles.container}>
       {/* <Header /> */}

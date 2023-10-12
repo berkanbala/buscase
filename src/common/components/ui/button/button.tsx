@@ -13,6 +13,7 @@ export const Button = (props: Props) => {
         className,
         disabled ? styles.disabled : ""
       )}
+      disabled={disabled}
     >
       {text}
     </button>
