@@ -1,0 +1,111 @@
+.container {
+  color: aqua;
+  background-color: black;
+  display: flex;
+  width: auto;
+  height: 15vh;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    margin-inline-end: auto;
+    // margin-right: 0;
+    // float: left;
+  }
+  .dropdown {
+    position: relative;
+    display: block;
+
+    &:hover {
+      .dropdowncontent {
+        display: block;
+      }
+    }
+
+    .dropbtn {
+      background-color: #fff;
+      color: #000;
+      padding: 10px 24px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #ccc;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid black;
+      }
+    }
+
+    .dropdowncontent {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px #2e5457;
+      z-index: 1;
+      border-radius: 5px;
+      cursor: pointer;
+
+      span {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+          background-color: #c2c2c2;
+        }
+      }
+    }
+
+    .dropbtnx {
+      border-bottom: 2px solid #fff;
+      background-color: #fff;
+      color: #000;
+      padding: 10px 24px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #ccc;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid black;
+      }
+    }
+  }
+  // .user {
+  //   display: flex;
+  //   flex-direction: column;
+  //   // margin-left: 0;
+  // }
+}
