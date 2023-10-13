@@ -11,11 +11,12 @@ import { useForm } from "@/common/hooks/useForm";
 import { notify } from "@/common/configs/notify";
 
 export default function SigninModal() {
-  const { modals } = useAppContext();
+  const { modals, setAuth } = useAppContext();
   const [form, setForm] = useForm(signinValues);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
     const ls = window.localStorage.getItem("form");
 
     if (ls) {
@@ -31,6 +32,7 @@ export default function SigninModal() {
     } else {
       notify("warning", "lutfen once kayit olunuz");
     }
+    setAuth(true);
     modals.setSigninModalVisible(false);
   };
 
@@ -48,17 +50,21 @@ export default function SigninModal() {
             type="text"
             name="email"
             value={form.email}
+            // value={emailValue}
             placeholder="email"
             required
-            onChange={setForm}
+            onChange={setForm.email}
+            // onChange={(e: any) => setEmailValue(e.target.value)}
           />
           <Input
             type="password"
             name="password"
             value={form.password}
+            // value={passwordValue}
             placeholder="password"
             required
-            onChange={setForm}
+            onChange={setForm.password}
+            // onChange={(e: any) => setPasswordValue(e.target.value)}
           />
           <Button
             className={styles.button}

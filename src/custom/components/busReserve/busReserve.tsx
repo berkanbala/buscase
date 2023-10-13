@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./busReserve.module.scss";
+import { Button } from "@/common/components/ui/button/button";
 
 export const BusReserve = () => {
   return (
@@ -42,10 +43,10 @@ export const BusReserve = () => {
       </ul>
 
       <p className={styles.text}>
-        <span id="count">3</span>
-        adet koltuk için hesaplanan tutar <span id="amount">150 tl</span>
+        <span id="count"> 3 </span>
+        adet koltuk için hesaplanan tutar <span id="amount"> 150 tl </span>
       </p>
-      <button>öde</button>
+      <Button text="Öde" />
     </div>
   );
 };

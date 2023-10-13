@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./searchBar.module.scss";
+import { Input } from "@/common/components/ui/input/input";
+import { Button } from "@/common/components/ui/button/button";
+import { notify } from "@/common/configs/notify";
 
 export const SearchBar = () => {
   const [showError, setError] = useState(false);
@@ -8,7 +11,11 @@ export const SearchBar = () => {
   const [search, setSearch] = useState({ from: "", to: "", date: "" });
 
   const updateValue = (e: any) => {
-    setSearch({ ...search, [e.target.name]: e.target.value });
+    if (e.target) {
+      setSearch({ ...search, [e.target.name]: e.target.value });
+    } else {
+      setSearch(e);
+    }
   };
 
   const searchForBuses = () => {
@@ -22,29 +29,27 @@ export const SearchBar = () => {
 
   return (
     <div className={styles.searchContainer}>
-      <h2> otobüs</h2>
+      <h2> Otobüs</h2>
       {showError ? <p className={styles.errorAlert}> giriniz </p> : ""}
       <div className={styles.formGroup}>
         <label>
           From:
-          <input required type="text" name="from" onChange={updateValue} />
+          <Input required type="text" name="from" onChange={updateValue} />
         </label>
       </div>
       <div className={styles.formGroup}>
         <label>
           To:
-          <input required type="text" name="to" onChange={updateValue} />
+          <Input required type="text" name="to" onChange={updateValue} />
         </label>
       </div>
       <div className={styles.formGroup}>
         <label>
           Date:
-          <input required type="date" name="date" onChange={updateValue} />
+          <Input required type="date" name="date" onChange={updateValue} />
         </label>
       </div>
-      <button onClick={searchForBuses} className={styles.button}>
-        ara
-      </button>
+      <Button onClick={searchForBuses} className={styles.button} text="ara" />
     </div>
   );
 };

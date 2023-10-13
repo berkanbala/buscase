@@ -11,15 +11,18 @@ export const AppContext = (props: Props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [auth, setAuth] = useState(false);
+  const [loginModalVisible, setLoginModalVisible] = useState(false);
 
   const {
-    loginModalVisible,
-    setLoginModalVisible,
+    // loginModalVisible,
+    // setLoginModalVisible,
     signinModalVisible,
     setSigninModalVisible,
     signupModalVisible,
     setSignupModalVisible,
   } = useModals();
+
+  // const { setLoginModalVisible }: any = useModals();
 
   return (
     <MainContext.Provider
