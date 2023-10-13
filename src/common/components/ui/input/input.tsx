@@ -1,6 +1,4 @@
 import clsx from "clsx";
-// import EyesOpen from "common/media/icons/eyesOpen.svg";
-// import EyesClose from "common/media/icons/eyesClose.svg";
 import styles from "./input.module.scss";
 
 export const Input = ({
@@ -10,11 +8,9 @@ export const Input = ({
   value,
   onChange,
   disabled,
-  onClick,
   className,
   placeholder,
   isExistPassword,
-  isPasswordVisible,
   required,
   readOnly,
 }: Props) => {
@@ -41,14 +37,6 @@ export const Input = ({
             isExistPassword === true ? styles.existPasswordInput : ""
           )}
         />
-        {/* {isExistPassword && (
-          <img
-            className={styles.eyesIcon}
-            onClick={onClick}
-            src={isPasswordVisible ? EyesClose : EyesOpen}
-            alt="eyes icon"
-          />
-        )} */}
       </div>
     </div>
   );

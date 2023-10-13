@@ -5,6 +5,7 @@ import AllModals from "@/custom/modals/allModals/allModals";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.scss";
+import { Provider } from "react-redux";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* <Provider store={undefined}> */}
         <AppContext>
           <AllModals />
           <ToastContainer theme="colored" />
           {children}
         </AppContext>
+        {/* </Provider> */}
       </body>
     </html>
   );

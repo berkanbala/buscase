@@ -50,13 +50,17 @@
       }
 
       .button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 200px;
         font-size: 16px;
         font-weight: 600;
         color: #fff;
         cursor: pointer;
         margin-top: 20px;
-        height: 55px;
+        height: 60px;
         text-align: center;
         border: none;
         background-size: 300% 100%;

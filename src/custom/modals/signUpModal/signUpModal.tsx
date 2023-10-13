@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import styles from "./signupModal.module.scss";
-import { useAppContext } from "@/common/context/appContext";
 import Image from "next/image";
 import Iconx from "../../../common/media/icons/x.png";
+import { useAppContext } from "@/common/context/appContext";
 import { Input } from "@/common/components/ui/input/input";
 import { Button } from "@/common/components/ui/button/button";
 import { signupValues } from "@/common/environments/initialValues";
@@ -38,7 +38,7 @@ export default function SignupModal() {
   return (
     <div className={styles.container} onClick={handleCloseModal}>
       <div className={styles.modal} onClick={handlePropagation}>
-        <div className={styles.modalTitle}>KAYIT OL</div>
+        <div className={styles.modalTitle}>SING UP</div>
         <form className={styles.modalForm} onSubmit={handleSubmit}>
           <Input
             type="text"
@@ -74,11 +74,13 @@ export default function SignupModal() {
           />
           <select defaultValue="" onChange={setForm} name="gender">
             <option value="" disabled hidden>
-              seciniz
+              select
             </option>
-            <option value="kadin">kadin</option>
-            <option value="erkek">erkek</option>
-            <option value="belirmetk istemiyorum">belirmetk istemiyorum</option>
+            <option value="kadin">woman</option>
+            <option value="erkek">man</option>
+            <option value="belirmetk istemiyorum">
+              I dont want to specify
+            </option>
           </select>
           <input
             name="date"
@@ -87,10 +89,9 @@ export default function SignupModal() {
             onChange={setForm}
             required
           />
-          {/* <Input type="date" value={form.date} onChange={setForm} required /> */}
           <Button
             className={styles.button}
-            text="kayıt ol"
+            text="register"
             disabled={!Object.values(form).every((form) => form !== "")}
           />
         </form>

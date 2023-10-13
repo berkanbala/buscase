@@ -2,44 +2,26 @@
 import React from "react";
 import styles from "./header.module.scss";
 import { useAppContext } from "@/common/context/appContext";
-import { useModals } from "@/common/hooks/useModals";
+import { SearchBar } from "@/custom/components/searchBar/searchBar";
 
 export const Header = () => {
-  // const { auth } = useAppContext();
-  const { user, setUser, auth, setAuth, pass, setPass } = useAppContext();
-
-  // const { loginModalVisible, setLoginModalVisible } = useModals(false);
+  const { email, setEmail, setPass } = useAppContext();
 
   const handleExit = () => {
-    // auth.setUser(false);
-    setAuth(false);
-    setUser("");
+    setEmail("");
     setPass("");
   };
-
-  // const handleModal = () => {
-  //   setLoginModalVisible(!loginModalVisible);
-  //   console.log("tıklandı");
-  // };
 
   return (
     <div className={styles.container}>
       <div className={styles.logo}>logo</div>
-
-      {/* {auth ? ( */}
       <li className={styles.dropdown}>
-        <div className={styles.dropbtn}>{user}</div>
+        <div className={styles.dropbtn}>{email}</div>
         <div className={styles.dropdowncontent}>
           <span onClick={handleExit}>logout</span>
         </div>
       </li>
-      {/* ) : (
-        <li className={styles.dropdown}>
-          <div className={styles.dropbtnx} onClick={handleModal}>
-            login
-          </div>
-        </li>
-      )} */}
+      {/* <SearchBar /> */}
     </div>
   );
 };

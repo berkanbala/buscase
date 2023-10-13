@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import styles from "./SigninModal.module.scss";
-import { useAppContext } from "@/common/context/appContext";
-import Image from "next/image";
 import Iconx from "../../../common/media/icons/x.png";
+import Image from "next/image";
+import { useAppContext } from "@/common/context/appContext";
 import { Input } from "@/common/components/ui/input/input";
 import { Button } from "@/common/components/ui/button/button";
 import { signinValues } from "@/common/environments/initialValues";
@@ -42,13 +42,13 @@ export default function SigninModal() {
   return (
     <div className={styles.container} onClick={handleCloseModal}>
       <div className={styles.modal} onClick={handlePropagation}>
-        <div className={styles.modalTitle}>GİRİŞ</div>
+        <div className={styles.modalTitle}>SIGN IN</div>
         <form className={styles.modalForm} onSubmit={handleSubmit}>
           <Input
             type="text"
             name="email"
             value={form.email}
-            placeholder="ad-soyad"
+            placeholder="email"
             required
             onChange={setForm}
           />
@@ -56,14 +56,14 @@ export default function SigninModal() {
             type="password"
             name="password"
             value={form.password}
-            placeholder="parola"
+            placeholder="password"
             required
             onChange={setForm}
           />
           <Button
             className={styles.button}
             type="submit"
-            text={"giriş yap"}
+            text={"Sign In"}
             disabled={!Object.values(form).every((item) => item !== "")}
           />
         </form>

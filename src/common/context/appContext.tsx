@@ -8,14 +8,9 @@ export const useAppContext = () => useContext(MainContext);
 export const AppContext = (props: Props) => {
   const { children } = props;
 
-  // const [user, setUser] = useState({} as any);
-  // const [user, setUser] = useState([] as any);
-  const [user, setUser] = useState("");
-  // const [pass, setPass] = useState({} as any);
-  // const [pass, setPass] = useState([] as any);
+  const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [auth, setAuth] = useState(false);
-  // const { loginModalVisible, setLoginModalVisible } = useModals(false);
 
   const {
     loginModalVisible,
@@ -35,10 +30,8 @@ export const AppContext = (props: Props) => {
         setPass,
         auth,
         setAuth,
-        // auth: {
-        user,
-        setUser,
-        // },
+        email,
+        setEmail,
         modals: {
           signinModalVisible,
           setSigninModalVisible,
@@ -60,8 +53,8 @@ interface IAppContext {
   auth: any;
   setAuth: any;
   // auth: {
-  user: any;
-  setUser: (_val: any) => void;
+  email: any;
+  setEmail: (_val: any) => void;
   // };
   modals: {
     signinModalVisible: boolean;
@@ -69,12 +62,6 @@ interface IAppContext {
     signupModalVisible: boolean;
     setSignupModalVisible: (_val: boolean) => void;
   };
-  // toasts: {
-  //   showErrorNotification: (title: string) => void;
-  //   showInfoNotification: (title: string) => void;
-  //   showSuccessNotification: (title: string) => void;
-  //   showWarningNotification: (title: string) => void;
-  // };
 }
 
 interface Props {

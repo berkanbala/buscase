@@ -1,19 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import styles from "./searchBar.module.scss";
 
 export const SearchBar = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const [search, setSearch] = useState({ from: "", to: "", date: "" });
-  const [isValidated, setIsValidated] = useState(false);
   const [showError, setError] = useState(false);
+  const [isValidated, setIsValidated] = useState(false);
+  const [search, setSearch] = useState({ from: "", to: "", date: "" });
+
   const updateValue = (e: any) => {
     setSearch({ ...search, [e.target.name]: e.target.value });
   };
+
   const searchForBuses = () => {
     setIsValidated(true);
     if (!search.from || !search.to || !search.date) {
@@ -21,8 +18,6 @@ export const SearchBar = () => {
       console.log(search);
       return;
     }
-    dispatch({ search, type: "SEARCH_BUS" });
-    navigate("availability");
   };
 
   return (

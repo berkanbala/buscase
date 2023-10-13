@@ -15,10 +15,10 @@ export default function Home() {
       {/* <Header /> */}
       <div className={styles.content}>
         <div className={styles.signin} onClick={handleSignin}>
-          giriş
+          Sign In
         </div>
         <div className={styles.signup} onClick={handleSignup}>
-          kayıt
+          Sign Up
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import SigninModal from "../signinModal/signinModal";
-import SignupModal from "../signupModal/signupModal";
+import SigninModal from "../signInModal/signInModal";
+import SignupModal from "../signUpModal/signUpModal";
 export default function AllModals() {
   return (
     <>
