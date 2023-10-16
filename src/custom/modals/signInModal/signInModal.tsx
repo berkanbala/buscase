@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SigninModal.module.scss";
 import Iconx from "../../../common/media/icons/x.png";
 import Image from "next/image";
@@ -9,7 +9,8 @@ import { Button } from "@/common/components/ui/button/button";
 import { signinValues } from "@/common/environments/initialValues";
 import { useForm } from "@/common/hooks/useForm";
 import { notify } from "@/common/configs/notify";
-
+import { validateLogin } from "../validation";
+import { redirect } from "next/navigation";
 export default function SigninModal() {
   const { modals, setAuth } = useAppContext();
   const [form, setForm] = useForm(signinValues);
@@ -17,6 +18,11 @@ export default function SigninModal() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
+    if (!validateLogin(form)) {
+      // redirect
+      return;
+    }
+    // setForm(signinValues);
     const ls = window.localStorage.getItem("form");
 
     if (ls) {
@@ -50,21 +56,17 @@ export default function SigninModal() {
             type="text"
             name="email"
             value={form.email}
-            // value={emailValue}
             placeholder="email"
             required
-            onChange={setForm.email}
-            // onChange={(e: any) => setEmailValue(e.target.value)}
+            onChange={setForm}
           />
           <Input
             type="password"
             name="password"
             value={form.password}
-            // value={passwordValue}
             placeholder="password"
             required
-            onChange={setForm.password}
-            // onChange={(e: any) => setPasswordValue(e.target.value)}
+            onChange={setForm}
           />
           <Button
             className={styles.button}

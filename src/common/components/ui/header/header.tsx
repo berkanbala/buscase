@@ -4,8 +4,8 @@ import styles from "./header.module.scss";
 import { useAppContext } from "@/common/context/appContext";
 import { signinValues } from "@/common/environments/initialValues";
 import { useForm } from "@/common/hooks/useForm";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { validateLogin } from "@/custom/modals/validation";
+
 export const Header = () => {
   // const router = useRouter();
   const {
@@ -17,11 +17,17 @@ export const Header = () => {
     loginModalVisible,
     setLoginModalVisible,
   } = useAppContext();
-  // const [form, setForm] = useForm(signinValues);
+
+  const [form, setForm] = useForm(signinValues);
 
   const handleModal = () => {
+    // if (!validateLogin(form)) {
+    //   return;
+    // }
+
     console.log("olmadı");
     setLoginModalVisible(!loginModalVisible);
+    // setForm(signinValues);
   };
 
   const handleExit = () => {
@@ -34,25 +40,23 @@ export const Header = () => {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>logo</div>
-      {auth ? (
-        <li className={styles.dropdown}>
-          <div className={styles.dropbtn}>{email}</div>
-          <div className={styles.dropdowncontent}>
-            <span onClick={handleExit}>logout</span>
-          </div>
-        </li>
-      ) : (
-        <li className={styles.dropdown}>
-          <div
-            className={styles.dropbtnx}
-            onClick={handleModal}
-            // onClick={() => router.push("/home")}
-          >
-            {/* <Link href="/Home">login</Link> */}
-            login
-          </div>
-        </li>
-      )}
+      {
+        auth && (
+          <li className={styles.dropdown}>
+            <div className={styles.dropbtn}>{email}</div>
+            <div className={styles.dropdowncontent}>
+              <span onClick={handleExit}>logout</span>
+            </div>
+          </li>
+        )
+        // : (
+        //   <li className={styles.dropdown}>
+        //     <div className={styles.dropbtnx} onClick={handleModal}>
+        //       login
+        //     </div>
+        //   </li>
+        // )
+      }
     </div>
   );
 };

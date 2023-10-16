@@ -5,6 +5,7 @@ import AllModals from "@/custom/modals/allModals/allModals";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.scss";
+import { Header } from "@/common/components/ui/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <AppContext>
           <AllModals />
           <ToastContainer theme="colored" />
+          <Header />
           {children}
         </AppContext>
       </body>

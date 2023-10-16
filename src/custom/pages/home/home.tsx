@@ -2,7 +2,6 @@
 import React from "react";
 import styles from "./home.module.scss";
 import { useAppContext } from "@/common/context/appContext";
-import { Header } from "@/common/components/ui/header/header";
 
 export default function Home() {
   const { modals } = useAppContext();
@@ -12,7 +11,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* <Header /> */}
       <div className={styles.content}>
         <div className={styles.signin} onClick={handleSignin}>
           Sign In

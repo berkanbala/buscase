@@ -16,7 +16,10 @@ export default function SignupModal() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (window.localStorage.getItem("form")) {
+
+    const ls = window.localStorage.getItem("form");
+
+    if (ls) {
       notify("warning", "daha once kayit yaptiniz", {
         position: "top-center",
       });

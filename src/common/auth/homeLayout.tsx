@@ -6,8 +6,8 @@ export const HomeLayout = () => {
   return (
     <>
       {/* <Header /> */}
-      {/* <Home /> */}
-      <BusReserve />
+      <Home />
+      {/* <BusReserve /> */}
     </>
   );
 };

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./busReserve.module.scss";
 import { Button } from "@/common/components/ui/button/button";
@@ -6,25 +7,27 @@ export const BusReserve = () => {
   return (
     <div className={styles.container}>
       <h1>Otobüs</h1>
-      <div className={styles.row}>
-        <div className={styles.seatSelected}></div>
-        <div className={styles.seatReserved}></div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.seat}></div>
-        <div className={styles.seat}></div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.seat}></div>
-        <div className={styles.seat}></div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.seat}></div>
-        <div className={styles.seat}></div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.seat}></div>
-        <div className={styles.seat}></div>
+      <div className={styles.content} onClick={() => console.log("tık")}>
+        <div className={styles.row}>
+          <div className={styles.seatSelected}></div>
+          <div className={styles.seatReserved}></div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.seat}></div>
+          <div className={styles.seat}></div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.seat}></div>
+          <div className={styles.seat}></div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.seat}></div>
+          <div className={styles.seat}></div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.seat}></div>
+          <div className={styles.seat}></div>
+        </div>
       </div>
 
       <ul className={styles.info}>
