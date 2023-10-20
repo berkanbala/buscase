@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./SigninModal.module.scss";
 import Iconx from "../../../common/media/icons/x.png";
 import Image from "next/image";
@@ -10,19 +10,16 @@ import { signinValues } from "@/common/environments/initialValues";
 import { useForm } from "@/common/hooks/useForm";
 import { notify } from "@/common/configs/notify";
 import { validateLogin } from "../validation";
-import { redirect } from "next/navigation";
 export default function SigninModal() {
-  const { modals, setAuth } = useAppContext();
+  const { modals, user } = useAppContext();
   const [form, setForm] = useForm(signinValues);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     if (!validateLogin(form)) {
-      // redirect
       return;
     }
-    // setForm(signinValues);
     const ls = window.localStorage.getItem("form");
 
     if (ls) {
@@ -31,6 +28,7 @@ export default function SigninModal() {
           position: "top-center",
         });
         setForm(signinValues);
+        user.setAuth(true);
         console.log(form);
       } else {
         notify("error", "emailler eslesmiyo");
@@ -38,7 +36,6 @@ export default function SigninModal() {
     } else {
       notify("warning", "lutfen once kayit olunuz");
     }
-    setAuth(true);
     modals.setSigninModalVisible(false);
   };
 

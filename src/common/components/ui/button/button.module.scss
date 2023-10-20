@@ -13,12 +13,12 @@
   transition: all 0.4s ease-in-out;
   background-image: linear-gradient(
     to right,
-    #189ad6,
-    #2e5457,
-    #3f938d,
-    #264f3c
+    #898787,
+    #000000,
+    #000000,
+    #898787
   );
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+  box-shadow: 0 4px 15px 0 #ad99c8bf;
 
   &:hover {
     background-position: 100% 0;

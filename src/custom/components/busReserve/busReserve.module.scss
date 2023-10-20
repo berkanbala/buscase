@@ -3,14 +3,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #292929;
   width: 400px;
   height: 400px;
   margin: auto;
-  color: aqua;
+  margin-top: 10px;
+  color: black;
+  background-image: linear-gradient(to top, #eb9696, #9f2626, #9f2626, #eb9696);
+  border-radius: 5px;
 
   h1 {
-    color: aliceblue;
+    color: black;
   }
   .row {
     margin-top: 5px;
@@ -84,8 +86,11 @@
   }
   .text {
     margin-top: 10px;
+    font-size: large;
+
     span {
-      color: #fbeb6f;
+      color: white;
+      font-size: large;
     }
   }
   button {

@@ -8,33 +8,25 @@ export const useAppContext = () => useContext(MainContext);
 export const AppContext = (props: Props) => {
   const { children } = props;
 
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
   const [auth, setAuth] = useState(false);
-  const [loginModalVisible, setLoginModalVisible] = useState(false);
+  const [userInfo, setUserInfo] = useState({} as any);
 
   const {
-    // loginModalVisible,
-    // setLoginModalVisible,
     signinModalVisible,
     setSigninModalVisible,
     signupModalVisible,
     setSignupModalVisible,
   } = useModals();
 
-  // const { setLoginModalVisible }: any = useModals();
-
   return (
     <MainContext.Provider
       value={{
-        loginModalVisible,
-        setLoginModalVisible,
-        pass,
-        setPass,
-        auth,
-        setAuth,
-        email,
-        setEmail,
+        user: {
+          auth,
+          setAuth,
+          userInfo,
+          setUserInfo,
+        },
         modals: {
           signinModalVisible,
           setSigninModalVisible,
@@ -49,16 +41,13 @@ export const AppContext = (props: Props) => {
 };
 
 interface IAppContext {
-  loginModalVisible: any;
-  setLoginModalVisible: any;
-  pass: any;
-  setPass: any;
-  auth: any;
-  setAuth: any;
-  // auth: {
-  email: any;
-  setEmail: (_val: any) => void;
-  // };
+  user: {
+    auth: boolean;
+    setAuth: (_val: boolean) => void;
+    userInfo: any;
+    setUserInfo: (_val: boolean) => void;
+  };
+
   modals: {
     signinModalVisible: boolean;
     setSigninModalVisible: (_val: boolean) => void;

@@ -1,0 +1,18 @@
+.container {
+  align-items: center;
+  bottom: 0;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  background-image: linear-gradient(
+    to right,
+    #eb9696,
+    #9f2626,
+    #9f2626,
+    #eb9696
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
