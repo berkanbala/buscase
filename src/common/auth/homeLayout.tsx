@@ -14,8 +14,8 @@ export const HomeLayout = () => {
       return (
         <>
           <Header />
-          <SearchBar />
-          {/* <BusReserve /> */}
+          {/* <SearchBar /> */}
+          <BusReserve />
           <Footer />
         </>
       );

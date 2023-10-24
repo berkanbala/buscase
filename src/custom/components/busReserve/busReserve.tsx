@@ -1,12 +1,22 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./busReserve.module.scss";
 import { Button } from "@/common/components/ui/button/button";
 
 export const BusReserve = () => {
+  const [selected, setSelected] = useState([]);
+
+  const price = 30;
+  const totalPrice = price * selected.length;
+
+  const addSeat = () => {
+    // setSelected();
+  };
+
   return (
     <div className={styles.container}>
       <h1>Otobüs</h1>
+
       <div className={styles.content} onClick={() => console.log("tık")}>
         <div className={styles.row}>
           <div className={styles.seatSelected}></div>
@@ -44,11 +54,13 @@ export const BusReserve = () => {
           <small>dolu</small>
         </li>
       </ul>
-
-      <p className={styles.text}>
-        <span id="count"> 3 </span>
-        adet koltuk için hesaplanan tutar <span id="amount"> 150 tl </span>
-      </p>
+      {selected.length !== 0 ? (
+        <p className={styles.text}>
+          <span id="count"> {selected.toString()} </span>
+          adet koltuk için hesaplanan tutar{" "}
+          <span id="amount"> {totalPrice} tl </span>
+        </p>
+      ) : null}
       <Button text="Öde" />
     </div>
   );

@@ -4,25 +4,23 @@ import styles from "./searchTable.module.scss";
 import { Button } from "@/common/components/ui/button/button";
 import { useRouter } from "next/navigation";
 import { BusReserve } from "../busReserve/busReserve";
-import Link from "next/link";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { useForm } from "@/common/hooks/useForm";
+import { signinValues } from "@/common/environments/initialValues";
 export const SearchTable = (values: any) => {
   const router = useRouter();
-  const [message, setMessage] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
+
+  const [state, setState] = useForm(signinValues);
   const [showError, setError] = useState(false);
   const [isValidated, setIsValidated] = useState(false);
   const [search, setSearch] = useState(values);
-  // const [search, setSearch] = useState({ from: "", to: "", date: "" });
 
   const updateValue = (e: any) => {
-    if (e.target) {
-      setSearch({ ...search, [e.target.name]: e.target.value });
-    } else {
-      setSearch(e);
-    }
-    // setMessage(e.target.value);
+    // if (e.target) {
+    //   setSearch({ ...search, [e.target.name]: e.target.value });
+    // } else {
+    //   setSearch(e);
+    // }
+    // setState(signinValues);
   };
 
   const searchForBuses = () => {
@@ -32,14 +30,16 @@ export const SearchTable = (values: any) => {
       console.log(search);
       return;
     }
-    router.push("/busReserve");
+    // router.push("/busReserve");
   };
 
   return (
     <div className={styles.searchContainer}>
       <h2> Otobüs</h2>
       {showError ? <p className={styles.errorAlert}> giriniz </p> : ""}
-      <div>
+      <div
+      //  onSubmit={updateValue}
+      >
         <div className={styles.formGroup}>
           <label>
             From:
@@ -47,8 +47,9 @@ export const SearchTable = (values: any) => {
               required
               type="text"
               name="from"
-              onChange={updateValue}
-              value={message}
+              value={state.from}
+              // onChange={updateValue}
+              onChange={setState}
             />
           </label>
         </div>
@@ -59,8 +60,9 @@ export const SearchTable = (values: any) => {
               required
               type="text"
               name="to"
-              onChange={updateValue}
-              value={message}
+              value={state.to}
+              // onChange={updateValue}
+              onChange={setState}
             />
           </label>
         </div>
@@ -68,19 +70,22 @@ export const SearchTable = (values: any) => {
           <label>
             Date:
             {/* <Input required type="date" name="date" onChange={updateValue} /> */}
-            <input required type="date" name="date" onChange={updateValue} />
+            <input
+              required
+              type="date"
+              name="date"
+              // value={state.date}
+              // onChange={updateValue}
+              onChange={setState}
+            />
           </label>
         </div>
-        {/* <DatePicker
-          selected={startDate}
-          onChange={(date: any) => setStartDate(date)}
-        /> */}
         <Button
           onClick={searchForBuses}
           className={styles.button}
           text="ara"
-          // disabled={!Object.values(form).every((item) => item !== "")}
           // disabled="disabled"
+          // disabled={!Object.values(state).every((item) => item !== "")}
         />
       </div>
     </div>

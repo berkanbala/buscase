@@ -14,6 +14,8 @@ export default function SigninModal() {
   const { modals, user } = useAppContext();
   const [form, setForm] = useForm(signinValues);
 
+  // console.log(user);
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -56,6 +58,7 @@ export default function SigninModal() {
             placeholder="email"
             required
             onChange={setForm}
+            // onChange={(e: any) => setForm({ ...user, email: e.target.value })}
           />
           <Input
             type="password"
@@ -64,6 +67,9 @@ export default function SigninModal() {
             placeholder="password"
             required
             onChange={setForm}
+            // onChange={(e: any) =>
+            //   setForm({ ...user, password: e.target.value })
+            // }
           />
           <Button
             className={styles.button}
