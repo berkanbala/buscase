@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import styles from "./SigninModal.module.scss";
+import styles from "./signInModal.module.scss";
 import Iconx from "../../../common/media/icons/x.png";
 import Image from "next/image";
 import { useAppContext } from "@/common/context/appContext";
