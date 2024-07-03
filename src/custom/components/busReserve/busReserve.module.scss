@@ -1,3 +1,5 @@
+@import "../../../common/assets/styles/variable.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -8,35 +10,37 @@
   margin: auto;
   margin-top: 10px;
   margin-bottom: 50px;
-  color: black;
-  background-image: linear-gradient(to top, #eb9696, #9f2626, #9f2626, #eb9696);
+  color: $black;
+  background-image: linear-gradient(to top, $pink, $red, $red, $pink);
   border-radius: 5px;
 
   h1 {
-    color: black;
+    color: $black;
   }
   .row {
     margin-top: 5px;
     display: flex;
 
     .seatSelected {
-      background-color: #f6eb6f;
+      background-color: $yellow;
       height: 15px;
       width: 15px;
       margin: 3px;
       border-radius: 5px;
       cursor: pointer;
     }
+
     .seatReserved {
-      background-color: #fff;
+      background-color: $white;
       height: 15px;
       width: 15px;
       margin: 3px;
       border-radius: 5px;
       cursor: pointer;
     }
+
     .seat {
-      background-color: #444451;
+      background-color: $grey5;
       height: 15px;
       width: 15px;
       margin: 3px;
@@ -47,37 +51,42 @@
       }
     }
   }
+
   .info {
-    background-color: rgb(0, 0, 0.2);
+    background-color: $white;
     padding: 5px 10px;
-    color: #777;
+    color: $grey6;
     display: flex;
     margin-top: 5px;
     margin-bottom: 5px;
+
     li {
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 10px;
     }
+
     .seatSelected {
-      background-color: #f6eb6f;
+      background-color: $yellow;
       height: 15px;
       width: 15px;
       margin: 3px;
       border-radius: 5px;
       cursor: pointer;
     }
+
     .seatReserved {
-      background-color: #fff;
+      background-color: $white;
       height: 15px;
       width: 15px;
       margin: 3px;
       border-radius: 5px;
       cursor: pointer;
     }
+
     .seat {
-      background-color: #444451;
+      background-color: $grey5;
       height: 15px;
       width: 15px;
       margin: 3px;
@@ -85,12 +94,13 @@
       cursor: pointer;
     }
   }
+  
   .text {
     margin-top: 10px;
     font-size: large;
 
     span {
-      color: white;
+      color: $white;
       font-size: large;
     }
   }

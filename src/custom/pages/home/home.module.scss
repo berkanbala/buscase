@@ -1,3 +1,5 @@
+@import "../../../common/assets/styles/variable.scss";
+
 .container {
   display: flex;
   justify-content: center;
@@ -7,7 +9,7 @@
 
   div {
     padding: 10px;
-    color: #fff;
+    color: $white;
     cursor: pointer;
     font-size: 15px;
     display: flex;
@@ -40,24 +42,24 @@
     .signin {
       background-image: linear-gradient(
         90.88deg,
-        #f0548b -0.07%,
-        #f26c61 100.07%
+        $pink1 -0.07%,
+        $orange 00.07%
       );
 
       &:hover {
         background-image: linear-gradient(
           90.88deg,
-          #ed427e -0.07%,
-          #ef594c 100.07%
+          $pink2 -0.07%,
+          $orange1 100.07%
         );
       }
     }
 
     .signup {
-      background-color: #3992ff;
+      background-color: $blue1;
 
       &:hover {
-        background-color: #1b6ef5 !important;
+        background-color: $blue !important;
       }
     }
   }

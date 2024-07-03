@@ -1,3 +1,5 @@
+@import "../../../common/assets/styles/variable.scss";
+
 .searchContainer {
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@
   height: 400px;
   margin: auto;
   margin-top: 10px;
-  background-image: linear-gradient(to top, #9f2626, #eb9696, #9f2626);
+  background-image: linear-gradient(to top, $pink, $red, $red, $pink);
   border-radius: 5px;
 
   input {
@@ -26,12 +28,11 @@
     border: none;
     width: 120px;
     padding: 10px;
-    background-color: green;
-    color: whitesmoke;
+    background-color: $green;
+    color: $white;
 
     &:hover {
-      background-color: burlywood;
-      // color: black;
+      background-color: $yellow;
       cursor: pointer;
     }
   }

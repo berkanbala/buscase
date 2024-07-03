@@ -2,9 +2,9 @@
 import React from "react";
 import styles from "./header.module.scss";
 import Image from "next/image";
-import { useAppContext } from "@/common/context/appContext";
-import { notify } from "@/common/configs/notify";
 import Star from "../../../media/icons/star.png";
+import { notify } from "@/common/configs/notify";
+import { useAppContext } from "@/common/context/appContext";
 export const Header = () => {
   const { user } = useAppContext();
 

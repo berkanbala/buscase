@@ -1,8 +1,10 @@
+@import "../../../assets/styles/variable.scss";
+
 .container {
   width: 200px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: $white;
   cursor: pointer;
   margin-top: 20px;
   height: 55px;
@@ -11,14 +13,8 @@
   background-size: 300% 100%;
   border-radius: 50px;
   transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(
-    to right,
-    #898787,
-    #000000,
-    #000000,
-    #898787
-  );
-  box-shadow: 0 4px 15px 0 #ad99c8bf;
+  background-image: linear-gradient(to right, $grey, $black, $black, $grey);
+  box-shadow: 0 4px 15px 0 $purple;
 
   &:hover {
     background-position: 100% 0;
@@ -32,7 +28,7 @@
 
 .disabled {
   opacity: 0.5;
-  background-color: #ccc;
+  background-color: $white1;
   cursor: not-allowed !important;
 
   &:hover {
